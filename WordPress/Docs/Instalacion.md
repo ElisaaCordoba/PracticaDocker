@@ -29,7 +29,8 @@ Al crear la imagen mariadb tiene que permitir la conexión desde otra máquina, 
 Del contenedor servidor_wp ejecuta un script docker-entrypoint.sh, a partir de las variables de entorno, ha creado el fichero wp-config.php de wordpress.
 
 Para visualizar el contenido del fichero `wp-config.php`:
-docker exec -it servidor_wp bash y cat wp-config.php
+#docker exec -it servidor_wp bash 
+#cat wp-config.php
 
 
 
