@@ -6,3 +6,6 @@ Mediawiki2.png: docker run -d -p 8081:80 --name mediawiki2 mediawiki:1.36.3
 Mediawikie.png: docker run -d -p 8082:80 --name mediawiki3 mediawiki:1.35.5
 [Imagen3](Mediawiki3.png)
 
+Para arrancar y parar  los servicio de Mediawiki utilizamos docker Desktop:
+[Arranque y Parada](StartMediawiki.png)
+
