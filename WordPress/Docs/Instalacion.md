@@ -20,6 +20,7 @@ docker run -d --name servidor_wp \
              wordpress
              
 [Comandos principales](Imagenes/RedContenedor.png)
+
 Elementos importantes:
 
 El contenedor servidor_mysql ejecuta un script docker-entrypoint.sh que es el encargado de configurar la base de datos y termina ejecutando el servidor mariadb.
