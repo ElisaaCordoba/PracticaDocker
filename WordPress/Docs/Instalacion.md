@@ -1,6 +1,5 @@
 Estos son los comandos necesarios para montar el entorno de Wordpress sobre dos contenedores conectados a la red, red_wp.
 docker network create red_wp 
-[Red](Imagenes/RedContenedor.png)
 docker run -d --name servidor_mysql \
              --network red_wp \
              -v /opt/mysql_wp:/var/lib/mysql \
@@ -19,6 +18,7 @@ docker run -d --name servidor_wp \
              -e WORDPRESS_DB_NAME=bd_wp \
              -p 80:80  
              wordpress
+[Comandos principales](Imagenes/RedContenedor.png)
 El contenedor servidor_mysql ejecuta un script docker-entrypoint.sh que es el encargado, a partir de las variables de entorno, configurar la base de datos y termina ejecutando el servidor mariadb.
 Al crear la imagen mariadb han tenido en cuenta de que tiene que permitir la conexión desde otra máquina, por lo que en la configuración tenemos comentado el parámetro bind-address.
 Del mismo modo el contenedor servidor_wp ejecuta un script docker-entrypoint.sh, que entre otras cosas, a partir de las variables de entorno, ha creado el fichero wp-config.php de wordpress, por lo que durante la instalación no te ha pedido las credenciales de la base de datos.
