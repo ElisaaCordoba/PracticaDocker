@@ -33,6 +33,6 @@ Para visualizar el contenido del fichero `wp-config.php`:
 docker exec -it servidor_wp bash 
 
 cat wp-config.php
-
+[Comprobacion](Imagenes/Servidor.wp.png)
 
 
