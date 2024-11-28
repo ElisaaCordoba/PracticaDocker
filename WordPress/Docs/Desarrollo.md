@@ -17,7 +17,7 @@ apt-get install -y iputils-ping
 
 docker exec -it servidor_wp ping -c 5 servidor_mysql
 
-[5 pings](Imagenes/5Pings.png)
+[5 pings](Imagenes/pings.png)
 
 
 
