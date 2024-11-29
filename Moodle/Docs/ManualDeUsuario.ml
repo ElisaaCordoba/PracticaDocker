@@ -1,6 +1,5 @@
-#Manual de usuario
+El #Manual de usuario de Moodle se encuentra en el fichero moodle de la carpeta Woed.
 
-1[Pasos de instalación]()
-2[Arranque y parada del servicio]()
-3[Mantenimiento y guias]()
-4[Troubleshotting]()
+[Manual de usuario de Moodle] (enlace al fichero moodle de la carpeta Word)
+
+
