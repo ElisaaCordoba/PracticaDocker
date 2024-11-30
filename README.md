@@ -8,7 +8,7 @@ Practica para desarollar distintas instalaciones de 4 supuestos en docker.
 
 3- [Moodle – Plataforma educativa de código abierto](Moodle/Docs/Word/moodle.docx)
 
-4- [Implantar el Proyecto-Personal página WEB (Versión PHP) sobre LAMP](Proyecto-Personal/Docs/Word/propersonal.md)
+4- [Implantar el Proyecto-Personal página WEB (Versión PHP) sobre LAMP](Proyecto-Personal/Docs/Word/proypersonal.docx)
 
 
 Para realizar la practica se necesita tener instalado Docker y Docker Compose
