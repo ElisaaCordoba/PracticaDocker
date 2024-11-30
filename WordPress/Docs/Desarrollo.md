@@ -20,4 +20,5 @@ docker exec -it servidor_wp ping -c 5 servidor_mysql
 [5 pings](Imagenes/pings.png)
 
 
+El resto de las cuestiones de la práctica se encuentran en el Manual de Usuario wordpress de la carpeta Word.
 
