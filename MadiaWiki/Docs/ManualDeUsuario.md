@@ -1,7 +1,8 @@
 #Manual de usuario
 
 Otra versión del manual de usuario de MediaWiki se encuentra en el fichero mediawiki de la carpeta Word
-[Manual de usuario de mediawiki](enlace al fichero mediawiki)
+
+[Manual de usuario de mediawiki](MadiaWiki/Docs/Word/mediawiki.md))
 
 1-[Pasos de instalación](PasosDeInstalacion.md)
 
