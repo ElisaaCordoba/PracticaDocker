@@ -1,8 +1,10 @@
 # Manual de usuario
 
-Otra versón del manual de usuario de wordpress se encuentra en el fichero wordpress de la carpeta Word
-[Manual de usuario de WordPress en Word](enlace al fichero word de la carpeta word)
+Otra versión del manual de usuario de wordpress se encuentra en el fichero wordpress de la carpeta Word
 
+[Manual de usuario de WordPress](/WordPress/Docs/Wordwordpress.md)
+
+Menú interactivo:
 
 1[Pasos de instalación](Instalacion.md)
 
