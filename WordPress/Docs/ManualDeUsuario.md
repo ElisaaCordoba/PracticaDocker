@@ -2,7 +2,7 @@
 
 Otra versión del manual de usuario de wordpress se encuentra en el fichero wordpress de la carpeta Word
 
-[Manual de usuario de WordPress](/WordPress/Docs/Word/wordpress.md)
+[Manual de usuario de WordPress](/WordPress/Docs/Word)
 
 Menú interactivo:
 
