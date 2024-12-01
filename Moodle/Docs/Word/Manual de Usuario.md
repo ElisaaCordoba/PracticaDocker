@@ -1,3 +1,6 @@
+
+Este fichero .md se ha obtenido utilizando la aplicación https://word2md.com/
+De esta manera, no hace falta descargar el moodle.docx
 Manual de Usuario
 
 Instalación de Moodle en Docker Compose
