@@ -2,7 +2,7 @@
 
 Practica para desarollar distintas instalaciones de 4 supuestos en docker.
 
-1- [Desplegando la aplicación MediaWiki](MadiaWiki/Docs/ManualDeUsuario.md)
+1- [Desplegando la aplicación MediaWiki](MadiaWiki/Docs/Word)
 
 2- [Despliegue del CMS Wordpress](WordPress/Docs)
 
