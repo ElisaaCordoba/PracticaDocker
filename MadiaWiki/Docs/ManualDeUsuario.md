@@ -2,7 +2,7 @@
 
 Otra versión del manual de usuario de MediaWiki se encuentra en el fichero mediawiki de la carpeta Word
 
-[Manual de usuario de mediawiki](/MadiaWiki/Docs/Word/mediawiki.md)
+[Manual de usuario de mediawiki](/MadiaWiki/Docs/Word)
 
 Menú interacivo:
 
