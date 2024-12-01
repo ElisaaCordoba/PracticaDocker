@@ -1,1 +1,44 @@
+version: '3.8'
 
+services:
+  # Servicio web (Apache + PHP)
+  web:
+    image: php:7.4-apache
+    container_name: apache-php
+    ports:
+      - "8080:80"  # Exponer el puerto 80 de Apache al puerto 8080 del host
+    volumes:
+      - ./mi_pagina_php:/var/www/html  # Mapea el directorio ./mi_pagina_php a /var/www/html (directorio raíz de Apache)
+    networks:
+      - lamp_network
+
+  # Servicio MySQL
+  db:
+    image: mysql:5.7
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword  # Contraseña para el usuario root
+      MYSQL_DATABASE: mydatabase  # Nombre de la base de datos
+      MYSQL_USER: user  # Nombre del usuario
+      MYSQL_PASSWORD: userpassword  # Contraseña del usuario
+    volumes:
+      - ./mysql_data:/var/lib/mysql  # Persistencia de datos
+    networks:
+      - lamp_network
+
+  # Servicio phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    ports:
+      - "8081:80"  # Exponer phpMyAdmin en el puerto 8081
+    environment:
+      PMA_HOST: db  # Nombre del contenedor de la base de datos MySQL
+      PMA_USER: user  # Usuario de MySQL
+      PMA_PASSWORD: userpassword  # Contraseña del usuario
+    networks:
+      - lamp_network
+
+networks:
+  lamp_network:
+    driver: bridge
