@@ -12,3 +12,4 @@ Practica para desarollar distintas instalaciones de 4 supuestos en docker.
 
 
 Para realizar la practica se necesita tener instalado Docker y Docker Compose
+En github tenemos 4 carpetas, en cada hay un manual en word, y en wordpress y 
