@@ -4,3 +4,5 @@
 
 3-Un entorno EBS para el Frontend (WEB Estática realizada con tecnología AngularJS)
 
+4-Manual de implantación
+
