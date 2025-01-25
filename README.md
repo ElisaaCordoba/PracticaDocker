@@ -10,7 +10,7 @@ Practica para desarollar distintas instalaciones de 4 supuestos en docker.
 
 4- [Implantar el Proyecto-Personal página WEB (Versión PHP) sobre LAMP](ProyectoPersonal/Manual/)
 
-5- AWS EBS
+5- [AWS EBS](EBS/Readme.md/)
 
 
 Para realizar la practica se necesita tener instalado Docker y Docker Compose
