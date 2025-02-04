@@ -1,6 +1,6 @@
 
 
-1- Un entorno de BBDD: EC2 o Un Amazon RDS for MySQL para la BBDD 
+[1- Un entorno de BBDD: EC2 o Un Amazon RDS for MySQL para la BBDD ] (./BBDD/BBDD_MySQL.pdf)
 
 2-Un entorno EBS para el Backend (WEB PHP realizada con tecnología Symfony)
 
