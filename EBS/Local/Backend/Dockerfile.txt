@@ -1,0 +1,33 @@
+# Usa la imagen oficial de PHP 8.3 con Apache
+FROM php:8.3-apache
+
+# Instala dependencias del sistema necesarias para Symfony y MySQL
+RUN apt-get update && apt-get install -y \
+    libicu-dev \
+    libzip-dev \
+    unzip \
+    git \
+    libmysqlclient-dev \
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install intl pdo pdo_mysql zip
+
+# Habilita los módulos de Apache necesarios para Symfony
+RUN a2enmod rewrite
+
+# Instala Composer (gestor de dependencias de PHP)
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Establece el directorio de trabajo dentro del contenedor
+WORKDIR /var/www/html
+
+# Copia los archivos del proyecto Symfony al contenedor
+COPY . .
+
+# Instala las dependencias de Symfony con Composer
+RUN composer install --no-dev --optimize-autoloader
+
+# Establece el puerto 80 (por defecto en Apache)
+EXPOSE 80
+
+# Comando por defecto para iniciar Apache
+CMD ["apache2-foreground"]
