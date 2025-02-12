@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8080:80"  # Exponer el puerto 8080 en el host
+    volumes:
+      - .:/var/www/html  # Volumen para desarrollo local
+    networks:
+      - symfony_network
+    environment:
+      MYSQL_HOST: db
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: symfony_db
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "80:80"  # Exponer el puerto 80 en el host para acceder al frontend
+    networks:
+      - symfony_network
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: symfony_db
+    ports:
+      - "3306:3306"  # Exponer el puerto 3306 para la base de datos
+    networks:
+      - symfony_network
+
+networks:
+  symfony_network:
+    driver: bridge
