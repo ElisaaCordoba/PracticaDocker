@@ -1,32 +1,33 @@
-# Etapa de construcción: usar Node.js para construir la aplicación AngularJS
-FROM node:18 AS build
+FROM ubuntu:24.04
+ARG DEBIAN_FRONTEND=noninteractive
+RUN  apt update --fix-missing -y && apt upgrade -y
 
-# Establecer directorio de trabajo
-WORKDIR /app
+# -- EDITAR POR EL USUARIO --
+ENV DATABASE_URL=mysql://apartamentos4v:apartamentos4v@apartamentos4v.cfeaqgcmmope.us-east-1.rds.amazonaws.com:3306/apartamentos4v?serverVersion=10.6.18-MariaDB&charset=utf8mb4
 
-# Copiar los archivos de configuración y el código fuente del frontend
-COPY ./frontend/package*.json ./
+# Dejar sistema preparado para continuar
+RUN apt install -y apt-utils git rsync nano vim unzip curl wget software-properties-common git
+RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 
-# Instalar dependencias de AngularJS
-RUN npm install
+# Instalar Software
+RUN apt-get install -y sudo apache2 php8.3 php8.3-common php8.3-cli php8.3-gd php8.3-mysql php8.3-mbstring php8.3-bcmath php8.3-xml php8.3-fpm php8.3-curl php8.3-zip libapache2-mod-php8.3
 
-# Copiar todo el código fuente al contenedor
-COPY ./frontend .
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+RUN rm /var/www/html/*
+RUN rm /etc/apache2/sites-enabled/000-default.conf
+COPY backend.conf /etc/apache2/sites-enabled/backend.conf
+RUN curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
-# Construir la aplicación AngularJS para producción
-RUN npm run build --prod
+# Subo archivos BACKEND
+COPY wwwdata/. /var/www/html
+RUN chown www-data:www-data -R /var/www/html/*
+RUN cd /var/www/html && COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader
 
-# Etapa de servicio: usar Apache para servir los archivos estáticos
-FROM php:8.3-apache
-
-# Habilitar el módulo rewrite de Apache
-RUN a2enmod rewrite
-
-# Copiar los archivos estáticos generados por Angular al directorio de Apache
-COPY --from=build /app/dist/ /var/www/html/
-
-# Exponer el puerto 80
-EXPOSE 80
-
-# Ejecutar Apache en primer plano
-CMD ["apache2-foreground"]
+# Activar opciones de apache y reiniciar servicio
+RUN a2enmod rewrite headers
+RUN service apache2 restart
+WORKDIR /var/www/html/
+#EXPOSE 80
+#CMD ["apache2ctl", "-D", "FOREGROUND"]
