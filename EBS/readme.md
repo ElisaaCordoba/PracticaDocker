@@ -7,7 +7,7 @@
 
 3-Un entorno EBS para el Frontend (WEB Estática realizada con tecnología AngularJS)
 
-4-AWS-EBS en local
+4- [AWS-EBS en local](./Local)
  
 5-Manual de implantación
 
